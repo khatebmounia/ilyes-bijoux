@@ -1,192 +1,1262 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscription — Ilyes Bijoux</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Ilyes Bijoux</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Montserrat', sans-serif; background: #fff; color: #222; font-size: 14px; }
-        a { text-decoration: none; color: inherit; }
-        .page-wrapper { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 60px 24px; background: #fdf9f8; }
-        .form-card { background: #fff; width: 100%; max-width: 480px; padding: 48px 44px; border: 1px solid #f0ece9; box-shadow: 0 4px 32px rgba(0,0,0,0.06); }
-        .form-title { font-size: 22px; font-weight: 700; color: #222; text-align: center; margin-bottom: 6px; letter-spacing: 0.5px; }
-        .form-subtitle { font-size: 12px; color: #aaa; text-align: center; margin-bottom: 32px; letter-spacing: 0.5px; }
-        .form-group { margin-bottom: 18px; }
-        .form-group label { display: block; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #555; margin-bottom: 8px; }
-        .form-group input { width: 100%; border: 1px solid #e0dbd8; padding: 12px 16px; font-family: 'Montserrat', sans-serif; font-size: 13px; color: #333; outline: none; transition: border-color 0.2s; background: #fff; border-radius: 0; }
-        .form-group input:focus { border-color: #c0555a; }
-        .form-group input::placeholder { color: #ccc; }
-        .pwd-wrap { position: relative; }
-        .pwd-wrap input { padding-right: 44px; }
-        .pwd-eye { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; color: #bbb; transition: color 0.2s; padding: 0; }
-        .pwd-eye:hover { color: #c0555a; }
-        .pwd-strength { display: flex; gap: 4px; margin-top: 8px; }
-        .pwd-bar { flex: 1; height: 3px; background: #eee; border-radius: 2px; transition: background 0.3s; }
-        .pwd-bar.weak   { background: #e02020; }
-        .pwd-bar.medium { background: #f59e0b; }
-        .pwd-bar.strong { background: #22c55e; }
-        .check-group { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 20px; }
-        .check-group input[type="checkbox"] { width: 16px; height: 16px; margin-top: 1px; accent-color: #c0555a; cursor: pointer; flex-shrink: 0; }
-        .check-group label { font-size: 12px; color: #777; line-height: 1.6; cursor: pointer; }
-        .check-group label a { color: #c0555a; text-decoration: underline; }
-        .btn-submit { width: 100%; background: #222; color: #fff; border: none; padding: 15px; font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: background 0.2s; margin-bottom: 16px; }
-        .btn-submit:hover    { background: #c0555a; }
-        .btn-submit:disabled { background: #aaa; cursor: not-allowed; }
-        .form-msg { text-align: center; font-size: 12px; font-weight: 600; padding: 10px; margin-bottom: 14px; display: none; border-radius: 2px; }
-        .form-msg.success { background: #f0fdf4; color: #16a34a; display: block; }
-        .form-msg.error   { background: #fff1f2; color: #dc2626; display: block; }
-        .divider { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
-        .divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: #eee; }
-        .divider span { font-size: 11px; color: #bbb; letter-spacing: 1px; }
-        .login-link { text-align: center; font-size: 12px; color: #888; }
-        .login-link a { color: #c0555a; font-weight: 700; }
-        .login-link a:hover { text-decoration: underline; }
-        footer { background: #222; color: rgba(255,255,255,0.4); padding: 20px 48px; text-align: center; font-size: 12px; }
-        footer a { color: rgba(255,255,255,0.4); margin: 0 12px; }
-        footer a:hover { color: #fff; }
-        @media (max-width: 600px) { .form-card { padding: 32px 22px; } footer { padding: 20px 16px; } }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #fff;
+            color: #222;
+            font-size: 14px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* ── RED TOP BAR ── */
+        .red-bar {
+            background: linear-gradient(145deg, #f62749, #f64f79, #f62749);
+            height: 50px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            justify-content: space-between;
+            padding: 0 180px;
+            color: #000000;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+
+
+        /* ── HEADER ── */
+        header {
+            background: #f7efef;
+            border-bottom: 1px solid #f0f0f0;
+            height: 85px;
+            position: sticky;
+            top: 0;
+            z-index: 200;
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 48px;
+            height: 72px;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        /* Logo */
+        .logo-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 80px;
+        }
+
+        .logo-icon {
+            width: 48px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-icon svg {
+            width: 44px;
+            height: 36px;
+        }
+
+        .logo-label {
+            font-size: 9px;
+            letter-spacing: 3px;
+            font-weight: 600;
+            color: #222;
+            text-transform: uppercase;
+            margin-top: 2px;
+        }
+
+        /* Nav */
+        nav.main-nav {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex: 1;
+            justify-content: center;
+        }
+
+        nav.main-nav>.nav-item {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #222;
+            cursor: pointer;
+            padding: 4px 0;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.2s;
+            position: relative;
+        }
+
+        nav.main-nav>.nav-item:hover {
+            border-bottom-color: #222;
+        }
+
+        .nav-item.nav-more {
+            font-size: 18px;
+            letter-spacing: 0;
+            font-weight: 400;
+            border: none !important;
+        }
+
+        /* Dropdown */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-panel {
+            display: none;
+            position: absolute;
+            top: calc(100% + 16px);
+            left: -20px;
+            background: #fff;
+            border: 1px solid #eee;
+            min-width: 240px;
+            padding: 8px 0;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            z-index: 300;
+        }
+
+        .dropdown:hover .dropdown-panel {
+            display: block;
+        }
+
+        .dropdown-panel a {
+            display: block;
+            padding: 10px 22px;
+            font-size: 13px;
+            color: #333;
+            transition: background 0.15s;
+            font-weight: 500;
+        }
+
+        .dropdown-panel a:hover {
+            background: #fdf0f2;
+            color: #c0555a;
+        }
+
+        /* Right actions */
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            min-width: 300px;
+            justify-content: flex-end;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            padding: 7px 12px;
+            gap: 8px;
+            background: #fff;
+            flex: 1;
+            max-width: 200px;
+        }
+
+        .search-box input {
+            border: none;
+            background: transparent;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
+            outline: none;
+            width: 100%;
+            color: #aaa;
+        }
+
+        .search-box input::placeholder {
+            color: #bbb;
+        }
+
+        .icon-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #333;
+            font-size: 22px;
+            padding: 4px;
+            position: relative;
+            transition: color 0.2s;
+        }
+
+        .icon-btn:hover {
+            color: #c0555a;
+        }
+
+        a.icon-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cart-dot {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: #e02020;
+            color: #fff;
+            font-size: 9px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+
+        /* ── HERO BANNER ── */
+        .hero {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            background: #d4c5b8;
+            cursor: pointer;
+        }
+
+        .hero-strip {
+            display: flex;
+            width: 100%;
+            height: 680px;
+            transition: transform 0.7s ease;
+        }
+
+        .hero-panel {
+            flex-shrink: 0;
+            width: 25%;
+            height: 100%;
+            background-size: cover;
+            background-position: center top;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-panel img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+        }
+
+        .hero-panel-letter {
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 160px;
+            font-weight: 900;
+            color: rgba(255, 255, 255, 0.18);
+            line-height: 1;
+            pointer-events: none;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .hero-center-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 10;
+            pointer-events: none;
+            width: 340px;
+        }
+
+        .hero-center-text h2 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #fff;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+            margin-bottom: 24px;
+            line-height: 1.4;
+        }
+
+        .btn-hero {
+            display: inline-block;
+            background: #fff;
+            color: #222;
+            padding: 14px 40px;
+            border-radius: 40px;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            pointer-events: all;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+            border: none;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .btn-hero:hover {
+            background: #f5e8ea;
+        }
+
+        /* ── CATEGORIES GRID ── */
+        .cat-section {
+            padding: 56px 48px 40px;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .cat-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .cat-card {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            background: #f5f0ee;
+        }
+
+        .cat-card img {
+            width: 100%;
+            aspect-ratio: 4/5;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+            transition: transform 0.5s ease;
+            filter: brightness(0.97);
+        }
+
+        .cat-card:hover img {
+            transform: scale(1.04);
+        }
+
+        .cat-label {
+            text-align: center;
+            padding: 14px 0 6px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: #c0555a;
+        }
+
+        /* ── SECTION TITLE ── */
+        .section-title {
+            text-align: center;
+            font-size: 20px;
+            font-weight: 700;
+            color: #222;
+            margin-bottom: 36px;
+            letter-spacing: 0.5px;
+        }
+
+        /* ── PRODUCTS GRID ── */
+        .products-section {
+            padding: 48px 48px;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .product-card {
+            cursor: pointer;
+            background: #fff;
+        }
+
+        .product-card:hover .product-img img {
+            transform: scale(1.04);
+        }
+
+        .product-img {
+            position: relative;
+            overflow: hidden;
+            background: #f7f4f2;
+            aspect-ratio: 1;
+        }
+
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .badges {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 3px 10px;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #fff;
+        }
+
+        .badge-new {
+            background: #222;
+        }
+
+        .badge-sale {
+            background: #e02020;
+        }
+
+        .product-info {
+            padding: 14px 4px 10px;
+        }
+
+        .product-name {
+            font-size: 13px;
+            font-weight: 400;
+            color: #333;
+            text-align: center;
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        .product-price {
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        .product-price .normal {
+            font-size: 15px;
+            font-weight: 700;
+            color: #222;
+        }
+
+        .product-price .old {
+            font-size: 12px;
+            color: #aaa;
+            text-decoration: line-through;
+            margin-right: 6px;
+        }
+
+        .product-price .reduced {
+            font-size: 15px;
+            font-weight: 700;
+            color: #e02020;
+        }
+
+        .btn-product {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background: #fce8ec;
+            color: #222;
+            border: none;
+            border-radius: 30px;
+            padding: 11px 16px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            transition: background 0.2s;
+        }
+
+        .btn-product:hover {
+            background: #f5c4cc;
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            background: #222;
+            color: rgba(255, 255, 255, 0.65);
+            padding: 48px 48px 24px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            max-width: 1600px;
+            margin: 0 auto 36px;
+        }
+
+        .footer-logo {
+            font-size: 18px;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 2px;
+            margin-bottom: 14px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 2px;
+        }
+
+        .footer-logo span {
+            font-size: 9px;
+            letter-spacing: 3px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .footer-desc {
+            font-size: 13px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 10px;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.55);
+            transition: color 0.2s;
+        }
+
+        .footer-col ul li a:hover {
+            color: #fff;
+        }
+
+        .social-row {
+            display: flex;
+            gap: 12px;
+            margin-top: 18px;
+        }
+
+        .social-btn {
+            width: 34px;
+            height: 34px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        .social-btn:hover {
+            border-color: #fff;
+            color: #fff;
+        }
+
+        .footer-bottom {
+            max-width: 1600px;
+            margin: 0 auto;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* ── CART SIDEBAR ── */
+        .backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.35);
+            z-index: 400;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+
+        .backdrop.open {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .cart-drawer {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 400px;
+            height: 100vh;
+            background: #fff;
+            z-index: 401;
+            transform: translateX(100%);
+            transition: transform 0.35s cubic-bezier(.4, 0, .2, 1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cart-drawer.open {
+            transform: translateX(0);
+        }
+
+        .cart-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 24px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .cart-head h3 {
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .cart-x {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #888;
+        }
+
+        .cart-body {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px 24px;
+        }
+
+        .cart-empty {
+            text-align: center;
+            padding: 80px 0;
+            color: #bbb;
+            font-size: 13px;
+        }
+
+        .cart-item {
+            display: flex;
+            gap: 14px;
+            padding: 14px 0;
+            border-bottom: 1px solid #f5f5f5;
+        }
+
+        .cart-item-img {
+            width: 72px;
+            height: 72px;
+            flex-shrink: 0;
+            background: #f7f4f2;
+            overflow: hidden;
+        }
+
+        .cart-item-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .cart-item-body {
+            flex: 1;
+        }
+
+        .cart-item-name {
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 4px;
+            line-height: 1.3;
+        }
+
+        .cart-item-price {
+            font-size: 13px;
+            color: #e02020;
+            font-weight: 700;
+        }
+
+        .qty-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .qty-b {
+            width: 26px;
+            height: 26px;
+            border: 1px solid #ddd;
+            background: #fff;
+            cursor: pointer;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .qty-n {
+            font-size: 13px;
+            min-width: 20px;
+            text-align: center;
+        }
+
+        .rm-b {
+            margin-left: auto;
+            background: none;
+            border: none;
+            font-size: 11px;
+            color: #bbb;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .cart-foot {
+            padding: 18px 24px;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 14px;
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+        .btn-checkout {
+            width: 100%;
+            background: #222;
+            color: #fff;
+            border: none;
+            padding: 14px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        .btn-checkout:hover {
+            background: #444;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 1100px) {
+            .products-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .cat-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-inner {
+                padding: 0 16px;
+            }
+
+            nav.main-nav {
+                gap: 20px;
+            }
+
+            .hero-strip {
+                height: 380px;
+            }
+
+            .hero-panel-letter {
+                font-size: 80px;
+            }
+
+            .hero-center-text h2 {
+                font-size: 16px;
+            }
+
+            .cat-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .cat-section {
+                padding: 30px 16px;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 14px;
+            }
+
+            .products-section {
+                padding: 30px 16px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 24px;
+            }
+
+            footer {
+                padding: 32px 16px 20px;
+            }
+
+            .cart-drawer {
+                width: 100vw;
+            }
+        }
     </style>
 </head>
+
 <body>
-    <div class="page-wrapper">
-        <div class="form-card">
-            <div style="text-align:center; margin-bottom:24px;">
+
+    <!-- RED BAR -->
+    <div class="red-bar">
+
+        <span> Appelez-nous 0798 69 50 86 </span>
+        <span><strong></strong>🖤 Les soldes du 8 mars jusqu'à -50% ! 🖤</strong></span>
+    </div>
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-inner">
+
+            <a href="#" class="logo-wrap">
                 <img srcset="//ilyes-bijoux.com/cdn/shop/files/logo_50x.png?v=1736430026 1x, //ilyes-bijoux.com/cdn/shop/files/logo_50x@2x.png?v=1736430026 2x"
                     src="//ilyes-bijoux.com/cdn/shop/files/logo_50x.png?v=1736430026" alt="Ilyes Bijoux"
-                    style="height:90px; width:auto; object-fit:contain;">
+                    style="height:80px; width:auto; object-fit:contain;">
+            </a>
+
+
+            <nav class="main-nav">
+                <div class="nav-item dropdown">
+                    NOUVELLE COLLECTION
+                    <div class="dropdown-panel">
+                        <a href="#">Nouvelle collection</a>
+                        <a href="#">Bijoux plaqué Or Paris Coque de Nacre</a>
+                        <a href="#">Bijoux Argent SOLDE -40%</a>
+                        <a href="#">Bague acier inoxydable promo</a>
+                        <a href="#">Bijoux de Fantaisie À 400 DA</a>
+                        <a href="#">Bracelets plaqué or Xuping</a>
+                    </div>
+                </div>
+                <div class="nav-item dropdown">
+                    MEILLEUR VENTE
+                    <div class="dropdown-panel">
+                        <a href="#">Meilleur vente</a>
+                        <a href="#">Collier meilleures ventes</a>
+                        <a href="#">Ensemble 2 meilleures ventes</a>
+                    </div>
+                </div>
+                <a href="#" class="nav-item">NOS MAGASINS</a>
+                <span class="nav-item nav-more">···</span>
+            </nav>
+
+            <div class="header-right">
+                <div class="search-box">
+                    <svg width="15" height="15" fill="none" stroke="#bbb" stroke-width="2" viewBox="0 0 24 24">
+                        <circle cx="11" cy="11" r="8" />
+                        <path d="m21 21-4.35-4.35" />
+                    </svg>
+                    <input type="text" placeholder="Recherche">
+                </div>
+                <a href="connection.html" class="icon-btn">
+                    <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"
+                        viewBox="0 0 24 24">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                        <circle cx="12" cy="7" r="4" />
+                    </svg>
+                </a>
+                <button class="icon-btn" onclick="toggleCart()" style="position:relative">
+                    <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"
+                        viewBox="0 0 24 24">
+                        <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                        <line x1="3" y1="6" x2="21" y2="6" />
+                        <path d="M16 10a4 4 0 0 1-8 0" />
+                    </svg>
+                    <span class="cart-dot" id="cartDot">0</span>
+                </button>
             </div>
-            <h1 class="form-title">Créer un compte</h1>
-            <p class="form-subtitle">Rejoignez Ilyes Bijoux et profitez de nos offres exclusives</p>
-            <div class="form-msg" id="formMsg"></div>
-            <form id="registerForm">
-                <div class="form-group">
-                    <label>Adresse e-mail</label>
-                    <input type="email" name="email" placeholder="exemple@email.com" required>
+        </div>
+    </header>
+
+    <!-- HERO BANNER -->
+    <section class="hero">
+        <div class="hero-strip">
+            <div class="hero-panel">
+                <img src="https://ilyes-bijoux.com/cdn/shop/files/IMG_9037-2_533x.jpg?v=1739094630" alt="bijoux"
+                    onerror="this.style.background='#c8b8a8';this.removeAttribute('src')">
+                <div class="hero-panel-letter">D</div>
+            </div>
+            <div class="hero-panel">
+                <img src="https://ilyes-bijoux.com/cdn/shop/files/IMG_7809_f1f7fcee-f3bf-479e-9fd7-99205920c902_533x.jpg?v=1739094944"
+                    alt="bijoux" onerror="this.style.background='#d4c4b4';this.removeAttribute('src')">
+                <div class="hero-panel-letter">1</div>
+            </div>
+            <div class="hero-panel">
+                <img src="https://ilyes-bijoux.com/cdn/shop/files/IMG_3929_533x.jpg?v=1739366449" alt="bijoux"
+                    onerror="this.style.background='#c8b8a8';this.removeAttribute('src')">
+                <div class="hero-panel-letter">N</div>
+            </div>
+            <div class="hero-panel">
+                <img src="https://ilyes-bijoux.com/cdn/shop/files/IMG_6875_5df37523-bf2f-4815-9780-72c269c4c4a4_533x.jpg?v=1739095271"
+                    alt="bijoux" onerror="this.style.background='#d0c0b0';this.removeAttribute('src')">
+                <div class="hero-panel-letter">1</div>
+            </div>
+        </div>
+        <div class="hero-center-text">
+            <h2>🖤 -50% pour toutes les femmes inscrites avant le 8 Mars. 🖤</h2>
+            <a href="connection.html" class="btn-hero">S'INSCRIRE</a>
+        </div>
+    </section>
+
+    <!-- CATEGORIES -->
+    <section class="cat-section">
+        <div class="cat-grid">
+            <div class="cat-card">
+                <img src="https://ilyes-bijoux.com/cdn/shop/files/IMG_9037-2_533x.jpg?v=1739094630" alt="Colliers"
+                    onerror="this.src='https://placehold.co/400x500/f0ebe6/bbb?text=Colliers'">
+                <div class="cat-label">Nos Colliers</div>
+            </div>
+            <div class="cat-card">
+                <img src="https://ilyes-bijoux.com/cdn/shop/files/IMG_7809_f1f7fcee-f3bf-479e-9fd7-99205920c902_533x.jpg?v=1739094944"
+                    alt="Boucles" onerror="this.src='https://placehold.co/400x500/f0ebe6/bbb?text=Boucles'">
+                <div class="cat-label">Nos Boucles d'Oreilles</div>
+            </div>
+            <div class="cat-card">
+                <img src="https://ilyes-bijoux.com/cdn/shop/files/IMG_3929_533x.jpg?v=1739366449" alt="Ensemble"
+                    onerror="this.src='https://placehold.co/400x500/f0ebe6/bbb?text=Ensembles'">
+                <div class="cat-label">Nos Ensemble</div>
+            </div>
+            <div class="cat-card">
+                <img src="https://ilyes-bijoux.com/cdn/shop/files/IMG_6875_5df37523-bf2f-4815-9780-72c269c4c4a4_533x.jpg?v=1739095271"
+                    alt="Gourmettes" onerror="this.src='https://placehold.co/400x500/f0ebe6/bbb?text=Gourmettes'">
+                <div class="cat-label">Nos Gourmettes</div>
+            </div>
+            <div class="cat-card">
+                <img src="https://ilyes-bijoux.com/cdn/shop/files/IMG_7061_dac4c8b9-aaed-4576-9a7c-455ac1a370ac_533x.jpg?v=1739095164"
+                    alt="Bracelets" onerror="this.src='https://placehold.co/400x500/f0ebe6/bbb?text=Bracelets'">
+                <div class="cat-label">Nos Bracelet</div>
+            </div>
+            <div class="cat-card">
+                <img src="https://ilyes-bijoux.com/cdn/shop/files/IMG_6576_533x.jpg?v=1739095397" alt="Bagues"
+                    onerror="this.src='https://placehold.co/400x500/f0ebe6/bbb?text=Bagues'">
+                <div class="cat-label">Nos Bagues</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTS — Coups de cœur -->
+    <section class="products-section">
+        <h2 class="section-title">Nos coups de cœur été 2025</h2>
+        <div class="products-grid">
+
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://ilyes-bijoux.com/cdn/shop/files/IMG_2484_533x.jpg?v=1772027578" alt="Bague acier"
+                        onerror="this.src='https://placehold.co/400x400/f7f4f2/bbb?text=Bijou'">
+                    <div class="badges"><span class="badge badge-new">NOUVEAU</span></div>
                 </div>
-                <div class="form-group">
-                    <label>Mot de passe</label>
-                    <div class="pwd-wrap">
-                        <input type="password" name="mot_de_passe" id="pwd" placeholder="Minimum 8 caractères" oninput="checkStrength(this.value)" required>
-                        <button class="pwd-eye" type="button" onclick="togglePwd()">
-                            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
-                            </svg>
-                        </button>
+                <div class="product-info">
+                    <div class="product-name">Bague En Acier Inoxydable Garantie</div>
+                    <div class="product-price"><span class="normal">1,700 DA</span></div>
+                    <button class="btn-product"
+                        onclick="addToCart('Bague En Acier Inoxydable Garantie',1700,'https://ilyes-bijoux.com/cdn/shop/files/IMG_2484_533x.jpg?v=1772027578')">ACHAT
+                        RAPIDE</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://ilyes-bijoux.com/cdn/shop/files/IMG_2453_cfa1f0f5-1c82-4d6f-a3e0-c87e4e849489_533x.jpg?v=1772020472"
+                        alt="Gourmette" onerror="this.src='https://placehold.co/400x400/f7f4f2/bbb?text=Bijou'">
+                    <div class="badges"><span class="badge badge-new">NOUVEAU</span><span
+                            class="badge badge-sale">VENTE</span></div>
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Gourmette En Acier Inoxydable Garantie, En Promo</div>
+                    <div class="product-price"><span class="old">700 DA</span><span class="reduced">350 DA</span></div>
+                    <button class="btn-product"
+                        onclick="addToCart('Gourmette Acier Inoxydable',350,'https://ilyes-bijoux.com/cdn/shop/files/IMG_2453_cfa1f0f5-1c82-4d6f-a3e0-c87e4e849489_533x.jpg?v=1772020472')">AJOUTER
+                        AU PANIER</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://ilyes-bijoux.com/cdn/shop/files/IMG_2452_533x.jpg?v=1772020472" alt="Gourmette"
+                        onerror="this.src='https://placehold.co/400x400/f7f4f2/bbb?text=Bijou'">
+                    <div class="badges"><span class="badge badge-new">NOUVEAU</span><span
+                            class="badge badge-sale">VENTE</span></div>
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Gourmette En Acier Inoxydable Garantie, En Promo</div>
+                    <div class="product-price"><span class="old">700 DA</span><span class="reduced">350 DA</span></div>
+                    <button class="btn-product"
+                        onclick="addToCart('Gourmette Acier Inoxydable',350,'https://ilyes-bijoux.com/cdn/shop/files/IMG_2452_533x.jpg?v=1772020472')">AJOUTER
+                        AU PANIER</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://ilyes-bijoux.com/cdn/shop/files/IMG_2454_533x.jpg?v=1772020471" alt="Gourmette"
+                        onerror="this.src='https://placehold.co/400x400/f7f4f2/bbb?text=Bijou'">
+                    <div class="badges"><span class="badge badge-new">NOUVEAU</span><span
+                            class="badge badge-sale">VENTE</span></div>
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Gourmette En Acier Inoxydable Garantie, En Promo</div>
+                    <div class="product-price"><span class="old">700 DA</span><span class="reduced">350 DA</span></div>
+                    <button class="btn-product"
+                        onclick="addToCart('Gourmette Acier Inoxydable',350,'https://ilyes-bijoux.com/cdn/shop/files/IMG_2454_533x.jpg?v=1772020471')">AJOUTER
+                        AU PANIER</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PRODUCTS — Argent -->
+    <section class="products-section"
+        style="background:#fdf9f8; padding-top:48px; padding-bottom:48px; max-width:100%;">
+        <div style="max-width:1600px; margin:0 auto; padding:0 48px;">
+            <h2 class="section-title">Nos coups de cœur été 2025 MODÈLE en Argent</h2>
+            <div class="products-grid">
+
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://ilyes-bijoux.com/cdn/shop/files/IMG_7287_86cbbf6c-0cee-44f5-a4a0-6b5ee3c54cdf_533x.jpg?v=1769092304"
+                            alt="Parure argent" onerror="this.src='https://placehold.co/400x400/f7f4f2/bbb?text=Bijou'">
                     </div>
-                    <div class="pwd-strength">
-                        <div class="pwd-bar" id="b1"></div>
-                        <div class="pwd-bar" id="b2"></div>
-                        <div class="pwd-bar" id="b3"></div>
+                    <div class="product-info">
+                        <div class="product-name">Parure de 4 pièces en argent rhodié garanti</div>
+                        <div class="product-price"><span class="normal">48,000 DA</span></div>
+                        <button class="btn-product"
+                            onclick="addToCart('Parure 4 pièces argent rhodié',48000,'https://ilyes-bijoux.com/cdn/shop/files/IMG_7287_86cbbf6c-0cee-44f5-a4a0-6b5ee3c54cdf_533x.jpg?v=1769092304')">ACHAT
+                            RAPIDE</button>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label>Confirmer le mot de passe</label>
-                    <div class="pwd-wrap">
-                        <input type="password" name="confirmation" id="pwd2" placeholder="Répétez votre mot de passe" required>
-                        <button class="pwd-eye" type="button" onclick="togglePwd2()">
-                            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
-                            </svg>
-                        </button>
+
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://ilyes-bijoux.com/cdn/shop/files/IMG_1068_fd686e71-6907-4a4d-95f2-197a6e3a39cd_533x.jpg?v=1767171616"
+                            alt="Bague argent" onerror="this.src='https://placehold.co/400x400/f7f4f2/bbb?text=Bijou'">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-name">Bague en argent rhodié garantie</div>
+                        <div class="product-price"><span class="normal">3,000 DA</span></div>
+                        <button class="btn-product"
+                            onclick="addToCart('Bague argent rhodié',3000,'https://ilyes-bijoux.com/cdn/shop/files/IMG_1068_fd686e71-6907-4a4d-95f2-197a6e3a39cd_533x.jpg?v=1767171616')">ACHAT
+                            RAPIDE</button>
                     </div>
                 </div>
-                <div class="check-group">
-                    <input type="checkbox" id="cgv" required>
-                    <label for="cgv">J'accepte les <a href="#">conditions générales de vente</a> et la <a href="#">politique de confidentialité</a> d'Ilyes Bijoux.</label>
+
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://ilyes-bijoux.com/cdn/shop/files/IMG_1068_fd686e71-6907-4a4d-95f2-197a6e3a39cd_533x.jpg?v=1767171616"
+                            alt="Bague argent" onerror="this.src='https://placehold.co/400x400/f7f4f2/bbb?text=Bijou'">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-name">Bague en argent rhodié garantie</div>
+                        <div class="product-price"><span class="normal">3,000 DA</span></div>
+                        <button class="btn-product"
+                            onclick="addToCart('Bague argent rhodié',3000,'https://ilyes-bijoux.com/cdn/shop/files/IMG_1068_fd686e71-6907-4a4d-95f2-197a6e3a39cd_533x.jpg?v=1767171616')">ACHAT
+                            RAPIDE</button>
+                    </div>
                 </div>
-                <div class="check-group" style="margin-bottom:28px;">
-                    <input type="checkbox" name="newsletter" id="newsletter" checked>
-                    <label for="newsletter">Je souhaite recevoir les offres et nouveautés par e-mail.</label>
+
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://ilyes-bijoux.com/cdn/shop/files/IMG_1038-Edit_533x.jpg?v=1767102450"
+                            alt="Boucles argent"
+                            onerror="this.src='https://placehold.co/400x400/f7f4f2/bbb?text=Bijou'">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-name">Boucles d'oreilles en argent rhodié garanties</div>
+                        <div class="product-price"><span class="normal">3,200 DA</span></div>
+                        <button class="btn-product"
+                            onclick="addToCart('Boucles oreilles argent',3200,'https://ilyes-bijoux.com/cdn/shop/files/IMG_1038-Edit_533x.jpg?v=1767102450')">ACHAT
+                            RAPIDE</button>
+                    </div>
                 </div>
-                <button type="submit" class="btn-submit" id="submitBtn">Créer mon compte</button>
-            </form>
-            <div class="divider"><span>OU</span></div>
-            <div class="login-link">Vous avez déjà un compte ? <a href="#">Se connecter</a></div>
+
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://ilyes-bijoux.com/cdn/shop/files/IMG_1034_533x.jpg?v=1767172327"
+                            alt="Gourmette argent"
+                            onerror="this.src='https://placehold.co/400x400/f7f4f2/bbb?text=Bijou'">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-name">Gourmette en argent rhodié garantie</div>
+                        <div class="product-price"><span class="normal">2,800 DA</span></div>
+                        <button class="btn-product"
+                            onclick="addToCart('Gourmette argent rhodié',2800,'https://ilyes-bijoux.com/cdn/shop/files/IMG_1034_533x.jpg?v=1767172327')">ACHAT
+                            RAPIDE</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <div class="footer-logo">
+                    BB
+                    <span>ILYES BIJOUX</span>
+                </div>
+                <p class="footer-desc">Votre bijouterie en ligne de confiance en Algérie. Bijoux Argent, Plaqué Or,
+                    Acier Inoxydable — livrés dans les 58 wilayas.</p>
+                <div class="social-row">
+                    <a href="#" class="social-btn">f</a>
+                    <a href="#" class="social-btn">ig</a>
+                    <a href="#" class="social-btn">wa</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Collections</h4>
+                <ul>
+                    <li><a href="#">Nouvelle Collection</a></li>
+                    <li><a href="#">Bijoux Plaqué Or</a></li>
+                    <li><a href="#">Bijoux Argent</a></li>
+                    <li><a href="#">Acier Inoxydable</a></li>
+                    <li><a href="#">Bijoux Fantaisie</a></li>
+                    <li><a href="#">Xuping</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Informations</h4>
+                <ul>
+                    <li><a href="#">Nos Magasins</a></li>
+                    <li><a href="#">À propos</a></li>
+                    <li><a href="#">Livraison</a></li>
+                    <li><a href="#">Politique de retour</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="tel:0798695086">📞 0798 69 50 86</a></li>
+                    <li><a href="#">💬 Chat en direct</a></li>
+                    <li><a href="#">📍 Nos magasins</a></li>
+                    <li><a href="#">✉️ Email</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2025 Ilyes Bijoux. Tous droits réservés.</span>
+            <span>Livraison dans les 58 wilayas d'Algérie</span>
+        </div>
+    </footer>
+
+    <!-- CART DRAWER -->
+    <div class="backdrop" id="backdrop" onclick="toggleCart()"></div>
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-head">
+            <h3>PANIER</h3>
+            <button class="cart-x" onclick="toggleCart()">✕</button>
+        </div>
+        <div class="cart-body" id="cartBody">
+            <div class="cart-empty">Votre panier est vide.</div>
+        </div>
+        <div class="cart-foot" id="cartFoot" style="display:none">
+            <div class="cart-total"><span>Total</span><span id="cartTotal">0 DA</span></div>
+            <button class="btn-checkout">Passer la commande</button>
         </div>
     </div>
-    <footer>
-        <a href="#">© 2025 Ilyes Bijoux</a>
-        <a href="#">Confidentialité</a>
-        <a href="#">CGV</a>
-        <a href="#">Contact</a>
-    </footer>
+
     <script>
-        const SUPABASE_URL = 'https://xzyvvhqgcrliwrqakbrn.supabase.co';
-        const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh6eXZ2aHFnY3JsaXdycWFrYnJuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI2NTc4MjQsImV4cCI6MjA4ODIzMzgyNH0.c6kmjPiJMPg6UAW9QBrxADVy2dSxYR8qaVGb9kFVasE';
-
-        function togglePwd() {
-            const i = document.getElementById('pwd');
-            i.type = i.type === 'password' ? 'text' : 'password';
+        let cart = [];
+        function toggleCart() {
+            document.getElementById('backdrop').classList.toggle('open');
+            document.getElementById('cartDrawer').classList.toggle('open');
         }
-        function togglePwd2() {
-            const i = document.getElementById('pwd2');
-            i.type = i.type === 'password' ? 'text' : 'password';
+        function addToCart(name, price, img) {
+            const ex = cart.find(i => i.name === name && i.img === img);
+            if (ex) ex.qty++;
+            else cart.push({ name, price, img, qty: 1 });
+            renderCart();
+            const d = document.getElementById('cartDrawer');
+            if (!d.classList.contains('open')) toggleCart();
         }
-        function checkStrength(val) {
-            const b1 = document.getElementById('b1');
-            const b2 = document.getElementById('b2');
-            const b3 = document.getElementById('b3');
-            b1.className = b2.className = b3.className = 'pwd-bar';
-            if (!val.length) return;
-            if (val.length < 6)       { b1.classList.add('weak'); }
-            else if (val.length < 10) { b1.classList.add('medium'); b2.classList.add('medium'); }
-            else                      { b1.classList.add('strong'); b2.classList.add('strong'); b3.classList.add('strong'); }
+        function changeQty(i, d) {
+            cart[i].qty += d;
+            if (cart[i].qty <= 0) cart.splice(i, 1);
+            renderCart();
         }
-
-        document.getElementById('registerForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-
-            const btn      = document.getElementById('submitBtn');
-            const msg      = document.getElementById('formMsg');
-            const email    = document.querySelector('input[name="email"]').value.trim();
-            const password = document.querySelector('input[name="mot_de_passe"]').value;
-            const confirm  = document.querySelector('input[name="confirmation"]').value;
-            const newsletter = document.querySelector('input[name="newsletter"]').checked;
-
-            msg.className = 'form-msg';
-
-            if (password !== confirm) {
-                msg.className   = 'form-msg error';
-                msg.textContent = '❌ Les mots de passe ne correspondent pas.';
-                return;
+        function renderCart() {
+            const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
+            const count = cart.reduce((s, i) => s + i.qty, 0);
+            document.getElementById('cartDot').textContent = count;
+            document.getElementById('cartTotal').textContent = total.toLocaleString('fr-DZ') + ' DA';
+            const body = document.getElementById('cartBody');
+            const foot = document.getElementById('cartFoot');
+            if (!cart.length) {
+                body.innerHTML = '<div class="cart-empty">Votre panier est vide.</div>';
+                foot.style.display = 'none'; return;
             }
-
-            btn.disabled    = true;
-            btn.textContent = 'Envoi en cours...';
-
-            try {
-                const res = await fetch(`${SUPABASE_URL}/rest/v1/users`, {
-                    method:  'POST',
-                    headers: {
-                        'Content-Type':  'application/json',
-                        'apikey':        SUPABASE_KEY,
-                        'Authorization': `Bearer ${SUPABASE_KEY}`,
-                        'Prefer':        'return=minimal'
-                    },
-                    body: JSON.stringify({ email, password, newsletter })
-                });
-
-                if (res.ok) {
-                    msg.className   = 'form-msg success';
-                    msg.textContent = '✅ Compte créé avec succès !';
-                    document.getElementById('registerForm').reset();
-                } else {
-                    const err = await res.json();
-                    msg.className   = 'form-msg error';
-                    msg.textContent = err.code === '23505'
-                        ? '❌ Cette adresse e-mail est déjà utilisée.'
-                        : '❌ ' + (err.message || 'Une erreur est survenue.');
-                }
-            } catch(err) {
-                msg.className   = 'form-msg error';
-                msg.textContent = '❌ Impossible de joindre le serveur.';
-            }
-
-            btn.disabled    = false;
-            btn.textContent = 'Créer mon compte';
-        });
+            foot.style.display = 'block';
+            body.innerHTML = cart.map((item, idx) => `
+    <div class="cart-item">
+      <div class="cart-item-img"><img src="${item.img}" onerror="this.src='https://placehold.co/72x72/f7f4f2/bbb?text=?'" alt=""></div>
+      <div class="cart-item-body">
+        <div class="cart-item-name">${item.name}</div>
+        <div class="cart-item-price">${item.price.toLocaleString('fr-DZ')} DA</div>
+        <div class="qty-row">
+          <button class="qty-b" onclick="changeQty(${idx},-1)">−</button>
+          <span class="qty-n">${item.qty}</span>
+          <button class="qty-b" onclick="changeQty(${idx},1)">+</button>
+          <button class="rm-b" onclick="changeQty(${idx},-99)">Retirer</button>
+        </div>
+      </div>
+    </div>`).join('');
+        }
     </script>
 </body>
+
 </html>
